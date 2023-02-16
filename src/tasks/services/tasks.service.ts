@@ -15,7 +15,7 @@ export class TasksService {
     }
 
     findOne(id: number) {
-        return this.tasksRepo.findOne(id);
+        return this.tasksRepo.findOne({ where: { id } });
     }
 
     create(body: any) {
@@ -26,7 +26,7 @@ export class TasksService {
     }
 
     async update(id: number, body: any) {
-        const task = await this.tasksRepo.findOne(id);
+        const task = await this.tasksRepo.findOne({ where: { id } });
         this.tasksRepo.merge(task, body);
         return this.tasksRepo.save(task);
     }
