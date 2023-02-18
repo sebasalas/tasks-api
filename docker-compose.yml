@@ -12,5 +12,7 @@ services:
     volumes:
     # Sólo para Windows
      # - ./postgres_data:/var/lib/postgresql
-      - ./postgres_data:/var/lib/postgresql
-   
+      - ./postgres_data:/var/lib/postgresql/data
+volumes: 
+  postgresql-volume:
+    external: true
