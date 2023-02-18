@@ -13,6 +13,7 @@ services:
     # Sólo para Windows
      # - ./postgres_data:/var/lib/postgresql
       - ./postgres_data:/var/lib/postgresql/data
+      - ./initdb:/docker-entrypoint-initdb.d
 volumes: 
   postgresql-volume:
     external: true
